@@ -1,25 +1,15 @@
-Project Title: Overhyped Beauty Busters
+Project Name:E-commerce
 
-Project Overview: "Overhyped Beauty Busters" is a platform designed to help users separate beauty industry hype from reality. With the rise of social media influencers and aggressive marketing tactics, consumers often struggle to differentiate between genuinely effective products and those that are simply well-advertised.With honest reviews, ingredient analysis, and AI-driven comparisons, the website enables users to determine whether a product is truly worth the investment. Users can browse product breakdowns, compare similar alternatives.The platform also fosters a community-driven experience, allowing users to share their real experiences, discuss product effectiveness, and highlight misleading claims.
-Key Features:
+Project Structure Frontend (React or Angular) Frontend is built using either React (for MERN) or Angular (for MEAN). The folders include the following: Tech-Stack: Frontend-HTML,CSS,React Backend-MongoDB,Express,Node.JS
 
-#User Login: Secure account creation and login for a personalized experience.
-Personalized recommendations based on skin type, concerns, and past interactions.
-#Product Reviews & Ratings: Read and submit honest reviews to uncover the real value of beauty products.
-AI aggregates and highlights the most common feedback for each product.
-#Ingredient Breakdown: Analyze the ingredients of a product to understand its effectiveness and potential risks.
-Understand how certain ingredients interact with different skin types.
+components pages router
 
-#AI-Powered Comparisons: Compare overhyped products with affordable, high-quality alternatives based on real data.
-Provides transparency on whether a product’s price is justified by its formulation.
+Backend (Node.js with Express) The backend is built with Node.js and Express and is structured as follows: models routers controllers config server.js db
 
-#Community Discussions & Forums: Engage in discussions with other beauty enthusiasts to share real experiences.
-Ask questions, get personalized advice, and discuss beauty trends.Users can upvote/downvote the most helpful responses.
+Milestone 1: Project Overview In this milestone we: Understood the general structure of a MERN project. Learnt how to initialize a new project and the basic steps involved in doing so. Understood some key functionalities of an e-commerce application, such as: User Authentication: secure login and registration. This milestone was all about preparing the ground for the upcoming stages of the project by setting up the repository and understanding the features and objectives of the application.
 
-Tech Stack:
-Front-End: React, HTML, CSS
-Back-End: Node.js , MongoDB
+E-Commerce App - Milestone 2 It will set up the frontend using React and Tailwind CSS as well as the backend using Node.js. It will be using a structured folder hierarchy with both frontend and backend directories. This is the first user-facing feature: the Login Page, and it has both functionality and styling. Check out the repository for the full setup and progress.
 
-Why This Project?
+E-Commerce App - Milestone 3 This milestone is to create the backend of the application with Node.js, Express, and MongoDB. Routes, controllers, models, and middleware are organized within a well-structured folder hierarchy. The server is configured to handle API requests and connects to MongoDB for storing data. Basic error handling has been added to improve debugging and user experience.
 
-The beauty industry is flooded with overhyped products that don’t always live up to their claims. Many consumers fall for marketing gimmicks, spending money on expensive items that may not be any better than budget-friendly alternatives. "Overhyped Beauty Busters" aims to provide transparency, helping users make smarter choices based on real reviews, ingredient effectiveness, and AI-driven comparisons. With this platform, users can avoid unnecessary spending and discover products that truly work for them.
+E-Commerce App - Milestone 4 This milestone involves user management and file uploads in the backend. A User Model is developed using MongoDB schemas to structure user data. A User Controller is implemented to handle user-related requests such as registration and retrieval. Multer is configured to enable file uploads, which will allow users to store images on the server. These features are added to the project repository and documented in the README.
