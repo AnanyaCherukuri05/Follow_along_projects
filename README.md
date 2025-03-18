@@ -383,3 +383,43 @@ This milestone focuses on implementing a **backend endpoint** to fetch all produ
 - Add authentication to secure user-specific cart data.
 - Enhance cart UI to allow quantity updates and removals directly from the cart page.
 
+## Milestone 19: Cart Page UI & Quantity Management
+
+### Project Overview
+
+This milestone focuses on building the *cart page UI* and implementing functionality to increase or decrease product quantity within the cart.
+
+### Key Achievements
+
+- *Cart Page UI:* Designed and developed a frontend page to display cart products.
+- *Quantity Control:* Added + and - buttons to adjust product quantity.
+- *Backend Integration:* Created an API endpoint to update product quantity in the cart.
+- *Improved User Experience:* Enabled users to manage their cart directly from the UI.
+
+### Future Enhancements
+
+- Implement a persistent cart across user sessions.
+- Add a "Remove from Cart" button for individual products.
+- Introduce stock validation to prevent over-purchasing.
+
+## Milestone 20: Profile Page Implementation
+
+### Project Overview
+
+This milestone focuses on building the *profile page UI* and implementing a backend endpoint to fetch and display user data.
+
+### Key Achievements
+
+- *Profile Page UI:* Designed and developed a frontend profile page to display user details.
+- *User Data Fetching:* Created an API endpoint to retrieve user data using email.
+- *Displayed User Information:* Shown profile photo, name, and email in a dedicated section.
+- *Address Management:* Displayed user addresses with an option to add a new address.
+- *Improved User Experience:* Provided a structured view of user information and an intuitive way to manage addresses.
+
+### Future Enhancements
+
+- Implement authentication to secure user data.
+- Allow users to edit their profile information.
+- Enable multiple address management with default selection.
+
+

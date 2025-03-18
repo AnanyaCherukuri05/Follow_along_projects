@@ -8,7 +8,7 @@ const cookieParser =require("cookie-parser")
 app.use(cookieParser())
 
 app.use(cors({
-  origin:"http://localhost:5174",
+  origin:"http://localhost:5173",
   credentials:true
 }))
 
@@ -26,7 +26,7 @@ app.get("/test", async (req, res) => {
 console.log(path.join(__dirname, 'uploadproducts'))
 
 
-app.use('/profile-photo', express.static(path.join(__dirname, 'uploads')));
+app.use('/profile-photo', express.static(path.join(__dirname, 'upload')));
 
 app.use('/products-photo', express.static(path.join(__dirname, 'uploadproducts')));
 

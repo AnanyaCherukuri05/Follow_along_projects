@@ -4,7 +4,7 @@ require("dotenv").config()
 const sendMail=async(options)=>{
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 5175,
+  port: 587,
   secure: false, 
   auth: {
     user: process.env.ADMIN_NAME,
@@ -13,14 +13,12 @@ const transporter = nodemailer.createTransport({
 });
 
   await transporter.sendMail({
-    from: process.env.SMTP_USER,
+    from: process.env.ADMIN_NAME,
     to:options.email,
     subject:options.subject,
     text:options.message,
   })
 
-
 }
-
 
 module.exports={sendMail}
