@@ -1,4 +1,3 @@
-
 export default function AddressCard({
 	_id,
 	country,

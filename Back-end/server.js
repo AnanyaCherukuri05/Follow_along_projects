@@ -10,6 +10,7 @@ app.get("/test",async(req,res)=>{
     res.send("hello......")
 })
 
+
 const port = process.env.PORT
 app.listen(port,async()=>{
     try {
@@ -18,5 +19,5 @@ app.listen(port,async()=>{
     } catch (error) {
          console.log(error)
     }
-       
+   
 })

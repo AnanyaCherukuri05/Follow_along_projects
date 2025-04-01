@@ -13,11 +13,15 @@ const transporter = nodemailer.createTransport({
 });
 
   await transporter.sendMail({
-    from: process.env.ADMIN_NAME,
+    from: process.env.SMTP_USER,
     to:options.email,
     subject:options.subject,
     text:options.message,
   })
+
+
+
+
 
 }
 

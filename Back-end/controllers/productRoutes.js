@@ -11,9 +11,10 @@ const auth=require("../middleware/auth")
 
 productRouter.post("/create-product",productUpload.array("images",10), catchAsyncError(async(req, res, next)=>{
     const { email,name, description,category,tags,price,stock} = req.body;
-    
+  
     const images =req.files.map((file)=>path.basename(file.path));
    
+
     if (!email ||!name ||!description ||!category ||!tags ||!price ||!images ||!stock) {
        return  next(new Errorhadler("All fields are required",400))
     }
@@ -29,7 +30,9 @@ productRouter.post("/create-product",productUpload.array("images",10), catchAsyn
     await product.save()
     res.status(201).json({message:"Product created successfully"})
 
+
 }))
+
 
 productRouter.get("/allproduct", catchAsyncError(async(req, res, next)=>{
       
@@ -42,6 +45,9 @@ productRouter.get("/individualproduct/:id", catchAsyncError(async(req, res, next
     let product = await ProductModel.findById(id)
     res.status(200).json({status:true,message:product})
 }))
+
+
+
 
 
 productRouter.delete("/delete/:id",catchAsyncError(async(req,res,next)=>{
@@ -60,6 +66,7 @@ productRouter.delete("/delete/:id",catchAsyncError(async(req,res,next)=>{
        res.status(200).json({status:true,message:"deleted successfully"})
        
 }))
+
 
 
 productRouter.put("/update/:id",productUpload.array("images",10),catchAsyncError(async(req,res,next)=>{
