@@ -556,3 +556,130 @@ This milestone focuses on creating a backend endpoint to fetch all orders associ
 - Add authentication and authorization to ensure only authorized users can view orders.
 - Enhance response formatting to include additional details like order status and estimated delivery time.
 
+Absolutely! Here's a `README.md` for **Milestone 27** that matches the style of your Milestone 26:
+
+---
+
+# Milestone 27: My Orders Frontend Page
+
+## Project Overview  
+This milestone focuses on creating a **frontend page** that displays all orders associated with a specific user, using the backend endpoint developed in the previous milestone.
+
+## Key Achievements  
+- **My Orders Page**: Designed and implemented a new `my-orders` page in the frontend.
+- **API Integration**: Sent a GET request to the `/my-orders` endpoint using the user’s email.
+- **Order Display**: Dynamically displayed all the retrieved user orders on the page.
+- **Navigation Update**: Added the `My Orders` page link to the navigation bar for seamless access.
+
+## Future Enhancements  
+- Improve UI with better styling and responsiveness.
+- Add loading states and error handling for better UX.
+- Implement search and filtering options for easier order tracking.
+- Integrate authentication to show orders only when the user is logged in.
+
+---
+# Milestone 28: Cancel Order Functionality
+
+## Project Overview  
+This milestone focuses on enabling users to **cancel their orders** from the frontend and updating the order status on the backend using a new API endpoint.
+
+## Key Achievements  
+- **Cancel Button Integration**: Added a **Cancel Order** button for each active order on the `my-orders` page.
+- **Conditional Rendering**: Ensured the cancel button is **not displayed** for orders that are already canceled.
+- **Cancel Order Endpoint**: Created a **backend endpoint** to handle order cancellation requests.
+- **Order Status Update**: Used the `order-id` to fetch the corresponding order and update its status to **"Canceled"** in the database.
+
+## Future Enhancements  
+- Display a confirmation prompt before canceling an order.
+- Show toast/alert messages for success or failure of the cancel action.
+- Allow admin users to manage canceled orders and restore if needed.
+- Log canceled orders for analytics and reporting.
+
+---
+Here's a clean and consistent `README.md` for **Milestone 30**, continuing from your Milestone 29 setup:
+
+---
+
+# Milestone 30: Online Payment Integration Using PayPal API
+
+## Project Overview  
+This milestone completes the PayPal payment integration process by using the **`react-paypal-js`** library to display actual PayPal payment options (like debit/credit cards) in the React application.
+
+## Key Achievements  
+- **PayPal SDK Integration**:  
+  - Installed and used the **`@paypal/react-paypal-js`** NPM package.
+  - Wrapped payment components with `PayPalScriptProvider` to initialize PayPal with the sandbox **Client ID**.
+
+- **PayPal Button Display**:  
+  - Conditionally rendered the **PayPal payment buttons** when "Online Payment" was selected on the order confirmation page.
+
+- **Smooth Payment Flow**:  
+  - Enabled users to proceed with PayPal payments using sandbox credentials.
+  - Set up initial configuration for transaction and payment handling.
+
+## NPM Package Used  
+```
+npm install @paypal/react-paypal-js
+```
+
+## Sample Code Snippet
+```jsx
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+
+<PayPalScriptProvider options={{ "client-id": "YOUR_SANDBOX_CLIENT_ID" }}>
+  <PayPalButtons style={{ layout: "vertical" }} />
+</PayPalScriptProvider>
+```
+
+## Future Enhancements  
+- Handle payment success and failure callbacks.
+- Store payment transaction details in the database.
+- Display order summary after successful payment.
+- Add loader and user feedback during transaction.
+
+---
+
+# Milestone 31: Global State Management with Redux
+
+## Project Overview  
+This milestone introduces **Redux** to manage global state in the application. Specifically, it focuses on storing the **user's email** in the Redux store so it can be accessed across all components easily.
+
+## Key Achievements  
+- **Redux Setup**:  
+  - Installed and configured **`react-redux`**.
+  - Created a `store/` folder containing:
+    - `store.js` – Redux store configuration.
+    - `userActions.js` – Contains action creator `setEmail()` for updating global email state.
+
+- **User Email as Global State**:  
+  - Implemented a simple `userReducer` to manage the user’s email.
+  - Configured the reducer in the store and exported it for use across the app.
+
+- **Provider Integration**:  
+  - Wrapped the `App` component inside the `Provider` component from `react-redux`.
+  - Passed the Redux `store` as a prop to ensure the entire app can access the global state.
+
+## Folder Structure  
+```
+src/
+│
+├── store/
+│   ├── store.js
+│   └── userActions.js
+├── index.js
+├── App.js
+└── ...
+```
+
+## NPM Packages Used  
+```
+npm install react-redux
+```
+
+## Future Enhancements  
+- Add more actions to manage other user details (e.g., name, login status).
+- Integrate Redux DevTools for easier debugging.
+- Implement **Redux Toolkit** for more efficient Redux code.
+- Use global state to improve route protection and conditional rendering.
+
+---
