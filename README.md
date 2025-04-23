@@ -683,3 +683,140 @@ npm install react-redux
 - Use global state to improve route protection and conditional rendering.
 
 ---
+
+# Milestone 32: Saving Email in Global State Using Redux
+
+## Project Overview  
+This milestone focuses on **storing the user's email in the Redux global state** during login and accessing it across all other pages using `useSelector`. This makes the user's email accessible throughout the application without prop drilling.
+
+## Key Achievements  
+- **Storing Email in Global State**:  
+  - On the Login page, used the `dispatch()` method from `react-redux` to update the Redux store with the user’s email using the `setEmail()` action.
+
+- **Accessing Global State Across Pages**:  
+  - Used the `useSelector()` hook to retrieve the email from the Redux store on all relevant pages.
+  - Ensured consistent access to the user's email throughout the app.
+
+## Folder Structure  
+```
+src/
+│
+├── store/
+│   ├── store.js
+│   └── userActions.js
+├── pages/
+│   ├── Login.js
+│   └── Dashboard.js
+├── App.js
+└── ...
+```
+
+## NPM Packages Used  
+```
+npm install react-redux redux
+```
+
+## Future Enhancements  
+- Store additional user details like name or login status in Redux.
+- Implement logout functionality to clear global state.
+- Add validation before updating the global store.
+- Introduce Redux Toolkit for simplified Redux implementation.
+
+---
+
+# Milestone 33: Creating JWT Token and Storing in Cookie
+
+## Project Overview  
+In this milestone, we learned how to **generate a JWT token** after successful login and **store it in a cookie** to maintain user sessions. This is a crucial step in implementing secure authentication for web applications.
+
+## Key Achievements  
+- **JWT Token Creation**:  
+  - Installed the `jsonwebtoken` package using NPM.
+  - Used the `sign()` method to generate a token containing the user's email and ID.
+  - Configured `maxAge` to set the expiration time for the token.
+
+- **Storing Token in Cookie**:  
+  - Set the JWT token as a cookie in the server response using `res.cookie()`.
+  - Ensured the cookie is stored in the browser for session persistence.
+
+- **Cookie Settings**:  
+  - Applied secure attributes like `httpOnly` and `maxAge` to enhance security.
+
+## Folder Structure  
+```
+backend/
+│
+├── routes/
+│   └── auth.js
+├── middleware/
+│   └── ...
+├── utils/
+│   └── jwtHelper.js
+└── server.js
+```
+
+## NPM Packages Used  
+```
+npm install jsonwebtoken cookie-parser
+```
+
+## Future Enhancements  
+- Add refresh tokens for long-lasting sessions.
+- Encrypt sensitive cookie data using HTTPS and `httpOnly` flags.
+- Implement auto-logout based on token expiration.
+- Use environment variables for token secret keys.
+
+---
+
+# Milestone 34: Validating JWT Token from Cookie
+
+## Project Overview  
+In this milestone, we focused on **extracting and validating JWT tokens stored in cookies**. This ensures that only authenticated users can access protected pages on the frontend.
+
+## Key Achievements  
+- **Extract JWT from Cookie (Frontend)**:  
+  - Accessed the cookie using `document.cookie` or via libraries like `js-cookie`.
+  - Sent the token to the server in an authenticated request (usually in headers or as part of an API call).
+
+- **Validate JWT on Backend (Middleware)**:  
+  - Created a middleware function `verifyToken()` to:
+    - Extract token from the request.
+    - Verify its validity using `jsonwebtoken`.
+    - Reject requests with invalid or missing tokens.
+  - Protected backend routes using this middleware.
+
+- **Route Protection (Frontend)**:  
+  - Ensured token presence and validity check on every protected page.
+  - Redirected users to login if the token is missing or invalid.
+
+## Folder Structure  
+```
+backend/
+│
+├── middleware/
+│   └── verifyToken.js
+├── routes/
+│   └── protectedRoutes.js
+└── server.js
+
+frontend/
+│
+├── pages/
+│   └── ProtectedPage.js
+├── utils/
+│   └── auth.js
+└── App.js
+```
+
+## NPM Packages Used  
+```
+npm install jsonwebtoken cookie-parser
+```
+
+## Future Enhancements  
+- Encrypt cookies using HTTP-only and Secure flags.
+- Implement auto logout on token expiration.
+- Store refresh tokens for long-term sessions.
+
+---
+
