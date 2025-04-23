@@ -556,8 +556,6 @@ This milestone focuses on creating a backend endpoint to fetch all orders associ
 - Add authentication and authorization to ensure only authorized users can view orders.
 - Enhance response formatting to include additional details like order status and estimated delivery time.
 
-Absolutely! Here's a `README.md` for **Milestone 27** that matches the style of your Milestone 26:
-
 ---
 
 # Milestone 27: My Orders Frontend Page
@@ -596,7 +594,44 @@ This milestone focuses on enabling users to **cancel their orders** from the fro
 - Log canceled orders for analytics and reporting.
 
 ---
-Here's a clean and consistent `README.md` for **Milestone 30**, continuing from your Milestone 29 setup:
+# Milestone 29: Integrating PayPal Payment Gateway
+
+## Project Overview  
+This milestone introduces the **integration of an online payment system** using the **PayPal API** in our e-commerce application. It prepares the frontend to support both **Cash on Delivery (COD)** and **Online Payment** options.
+
+## Key Achievements  
+- **PayPal Developer Setup**:  
+  - Created a PayPal Developer account.
+  - Accessed the **Sandbox** environment for testing.
+  - Retrieved the **Client ID** and test **User ID** from the sandbox account.
+
+- **Frontend Integration**:  
+  - Added payment options on the **Order Confirmation** page.
+  - Created **radio buttons** to let the user select either **Cash on Delivery** or **Online Payment**.
+  - Configured the UI to display **PayPal buttons** only when "Online Payment" is selected.
+
+- **Prepared for Next Step**:  
+  - The actual implementation of PayPal payment buttons will be done in the upcoming milestone.
+
+## Folder Structure  
+```
+src/
+│
+├── pages/
+│   └── OrderConfirmation.js
+├── components/
+│   └── PaymentOptions.js
+└── ...
+```
+
+## Tools & Resources  
+- PayPal Developer Dashboard: https://developer.paypal.com  
+- Sandbox Credentials used for testing
+
+## Future Enhancements  
+- Add functionality for PayPal button using PayPal JavaScript SDK.
+- Integrate real payment processing and order success logic.
+- Implement payment status tracking and error handling.
 
 ---
 
@@ -820,3 +855,46 @@ npm install jsonwebtoken cookie-parser
 
 ---
 
+# Milestone 35: Final Project Deployment
+
+## Project Overview  
+In this milestone, we learned how to *deploy both the frontend and backend* of our full-stack web application. The result is a fully working, live website accessible over the internet.
+
+## Key Achievements  
+- *Backend Deployment*:  
+  - Deployed the backend using a cloud hosting service like *Render, **Railway, or **Vercel (Serverless Functions)*.
+  - Ensured environment variables (like DB URLs and JWT secrets) were configured correctly.
+  - Obtained and noted the backend deployment URL.
+
+- *Frontend Deployment*:  
+  - Updated API calls in the frontend to point to the deployed backend instead of localhost.
+  - Deployed the frontend using services like *Netlify, **Vercel, or **GitHub Pages*.
+  - Confirmed both frontend and backend are connected and functional.
+
+- *Full Stack Integration*:  
+  - Verified that cookies and tokens work properly after deployment.
+  - Ensured login, protected routes, and data fetching are all operational on the live site.
+
+## Folder Structure  
+
+project-root/
+│
+├── backend/
+│   └── Deployed to: [your-backend-link]
+│
+├── frontend/
+│   └── Deployed to: [your-frontend-link]
+└── README.md
+
+
+## Deployment Tools Used  
+- Frontend: Netlify / Vercel / GitHub Pages  
+- Backend: Render / Railway / Vercel Serverless Functions  
+
+## Future Enhancements  
+- Add CI/CD pipelines for automated deployment.
+- Use domain name (custom domain) for a professional touch.
+- Set up monitoring for uptime and error tracking (e.g., UptimeRobot, Sentry).
+- Optimize performance and SEO for better user experience.
+
+---
